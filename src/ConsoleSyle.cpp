@@ -198,30 +198,30 @@ void ConsoleStyle::set_cerr_style_mode(ConsoleMode mode) {
   }
 }
 
-StyleGuard ConsoleStyle::default_style(){ return StyleGuard(nullptr,Style::Effect::RESET_ALL);}
+StyleGuard ConsoleStyle::styles::default_style(){ return StyleGuard(nullptr,Style::Effect::RESET_ALL);}
 
-StyleGuard ConsoleStyle::black()        { return StyleGuard(nullptr,{},Style::Color::BLACK);}
-StyleGuard ConsoleStyle::red()          { return StyleGuard(nullptr,{},Style::Color::RED);}
-StyleGuard ConsoleStyle::green()        { return StyleGuard(nullptr,{},Style::Color::GREEN);}
-StyleGuard ConsoleStyle::yellow()        { return StyleGuard(nullptr,{},Style::Color::YELLOW);}
-StyleGuard ConsoleStyle::blue()         { return StyleGuard(nullptr,{},Style::Color::BLUE);}
-StyleGuard ConsoleStyle::magenta()       { return StyleGuard(nullptr,{},Style::Color::MAGENTA);}
-StyleGuard ConsoleStyle::cyan()         { return StyleGuard(nullptr,{},Style::Color::CYAN);}
-StyleGuard ConsoleStyle::white()   { return StyleGuard(nullptr,{},Style::Color::WHITE);}
+StyleGuard ConsoleStyle::styles::black()        { return StyleGuard(nullptr,{},Style::Color::BLACK);}
+StyleGuard ConsoleStyle::styles::red()          { return StyleGuard(nullptr,{},Style::Color::RED);}
+StyleGuard ConsoleStyle::styles::green()        { return StyleGuard(nullptr,{},Style::Color::GREEN);}
+StyleGuard ConsoleStyle::styles::yellow()        { return StyleGuard(nullptr,{},Style::Color::YELLOW);}
+StyleGuard ConsoleStyle::styles::blue()         { return StyleGuard(nullptr,{},Style::Color::BLUE);}
+StyleGuard ConsoleStyle::styles::magenta()       { return StyleGuard(nullptr,{},Style::Color::MAGENTA);}
+StyleGuard ConsoleStyle::styles::cyan()         { return StyleGuard(nullptr,{},Style::Color::CYAN);}
+StyleGuard ConsoleStyle::styles::white()   { return StyleGuard(nullptr,{},Style::Color::WHITE);}
 
-StyleGuard ConsoleStyle::bg_black()        { return StyleGuard(nullptr,{},{},Style::Color::BLACK);}
-StyleGuard ConsoleStyle::bg_red()          { return StyleGuard(nullptr,{},{},Style::Color::RED);}
-StyleGuard ConsoleStyle::bg_green()        { return StyleGuard(nullptr,{},{},Style::Color::GREEN);}
-StyleGuard ConsoleStyle::bg_yellow()        { return StyleGuard(nullptr,{},{},Style::Color::YELLOW);}
-StyleGuard ConsoleStyle::bg_blue()         { return StyleGuard(nullptr,{},{},Style::Color::BLUE);}
-StyleGuard ConsoleStyle::bg_magenta()       { return StyleGuard(nullptr,{},{},Style::Color::MAGENTA);}
-StyleGuard ConsoleStyle::bg_cyan()         { return StyleGuard(nullptr,{},{},Style::Color::CYAN);}
-StyleGuard ConsoleStyle::bg_white()   { return StyleGuard(nullptr,{},{},Style::Color::WHITE);}
+StyleGuard ConsoleStyle::styles::bg_black()        { return StyleGuard(nullptr,{},{},Style::Color::BLACK);}
+StyleGuard ConsoleStyle::styles::bg_red()          { return StyleGuard(nullptr,{},{},Style::Color::RED);}
+StyleGuard ConsoleStyle::styles::bg_green()        { return StyleGuard(nullptr,{},{},Style::Color::GREEN);}
+StyleGuard ConsoleStyle::styles::bg_yellow()        { return StyleGuard(nullptr,{},{},Style::Color::YELLOW);}
+StyleGuard ConsoleStyle::styles::bg_blue()         { return StyleGuard(nullptr,{},{},Style::Color::BLUE);}
+StyleGuard ConsoleStyle::styles::bg_magenta()       { return StyleGuard(nullptr,{},{},Style::Color::MAGENTA);}
+StyleGuard ConsoleStyle::styles::bg_cyan()         { return StyleGuard(nullptr,{},{},Style::Color::CYAN);}
+StyleGuard ConsoleStyle::styles::bg_white()   { return StyleGuard(nullptr,{},{},Style::Color::WHITE);}
 
-StyleGuard ConsoleStyle::bright(){ return StyleGuard(nullptr,Style::Effect::BRIGHT);}
-StyleGuard ConsoleStyle::dim(){ return StyleGuard(nullptr,Style::Effect::DIM);}
-StyleGuard ConsoleStyle::italic(){ return StyleGuard(nullptr,Style::Effect::ITALIC);}
-StyleGuard ConsoleStyle::blink(){ return StyleGuard(nullptr,Style::Effect::BLINK);}
-StyleGuard ConsoleStyle::underline(){ return StyleGuard(nullptr,Style::Effect::UNDERSCORE);}
-StyleGuard ConsoleStyle::reverse(){ return StyleGuard(nullptr,Style::Effect::REVERSE);}
+StyleGuard ConsoleStyle::styles::bright(){ return StyleGuard(nullptr,Style::Effect::BRIGHT);}
+StyleGuard ConsoleStyle::styles::dim(){ return StyleGuard(nullptr,Style::Effect::DIM);}
+StyleGuard ConsoleStyle::styles::italic(){ return StyleGuard(nullptr,Style::Effect::ITALIC);}
+StyleGuard ConsoleStyle::styles::blink(){ return StyleGuard(nullptr,Style::Effect::BLINK);}
+StyleGuard ConsoleStyle::styles::underline(){ return StyleGuard(nullptr,Style::Effect::UNDERSCORE);}
+StyleGuard ConsoleStyle::styles::reverse(){ return StyleGuard(nullptr,Style::Effect::REVERSE);}
 
