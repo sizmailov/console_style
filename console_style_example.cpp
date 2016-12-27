@@ -56,12 +56,22 @@ int main()
   std::cout << cs:: bright() << cs::underline() << "bright underline" ; std::cout << std::endl;
   std::cout << cs:: bright() << cs::reverse() << "bright reverse" ; std::cout << std::endl;
 
-  SET_SCOPED_CONSOLE_STYLE(std::cout, cs::yellow()+cs::reverse()+cs::underline());
-  std::cout << "hello world" << std::endl;
   {
-    SET_SCOPED_CONSOLE_STYLE(std::cout, cs::default_style());
-    std::cout << "default" << std::endl;
+    SET_SCOPED_CONSOLE_STYLE(std::cout, cs::yellow()+cs::reverse()+cs::underline());
+    std::cout << "hello world" << std::endl;
+    {
+      SET_SCOPED_CONSOLE_STYLE(std::cout, cs::default_style());
+      std::cout << "default" << std::endl;
+    }
   }
+
+
+  cs::set_cout_style_mode(cs::ConsoleMode::AUTO);
+  std::cout << cs::red() << "auto red" << std::endl;
+  cs::set_cout_style_mode(cs::ConsoleMode::FORCE_NO_COLORS);
+  std::cout << cs::red() << "force no red" << std::endl;
+  cs::set_cout_style_mode(cs::ConsoleMode::FORCE_COLORS);
+  std::cout << cs::red() << "force red" << std::endl;
 
 
   return 0;

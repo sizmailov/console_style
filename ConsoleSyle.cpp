@@ -173,6 +173,31 @@ std::ostream& ConsoleStyle::operator<<(std::ostream& out, const StyleGuard& guar
   return out;
 }
 
+
+void ConsoleStyle::set_cout_style_mode(ConsoleMode mode) {
+  auto& state = StyleGuard::global_state();
+  assert(state.cout_style_stack.size()==1);
+  if (mode==ConsoleMode::AUTO){
+    state.colorize_cout=!is_stdout_redirected();
+  }else if (mode==ConsoleMode::FORCE_COLORS){
+    state.colorize_cout=true;
+  }else{
+    state.colorize_cout=false;
+  }
+}
+
+void ConsoleStyle::set_cerr_style_mode(ConsoleMode mode) {
+  auto& state = StyleGuard::global_state();
+  assert(state.cerr_style_stack.size()==1);
+  if (mode==ConsoleMode::AUTO){
+    state.colorize_cerr=!is_stderr_redirected();
+  }else if (mode==ConsoleMode::FORCE_COLORS){
+    state.colorize_cerr=true;
+  }else{
+    state.colorize_cerr=false;
+  }
+}
+
 StyleGuard ConsoleStyle::default_style(){ return StyleGuard(nullptr,Style::Effect::RESET_ALL);}
 
 StyleGuard ConsoleStyle::black()        { return StyleGuard(nullptr,{},Style::Color::BLACK);}

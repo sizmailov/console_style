@@ -50,6 +50,14 @@ struct StyleGuard;
 
 std::ostream& operator<<(std::ostream& out, const StyleGuard& guard);
 
+enum class ConsoleMode{
+  AUTO,
+  FORCE_COLORS,
+  FORCE_NO_COLORS,
+};
+void set_cout_style_mode(ConsoleMode mode);
+void set_cerr_style_mode(ConsoleMode mode);
+
 struct StyleGuard{
   StyleGuard(std::ostream* out, Style::Effect special, Style::Color foreground=Style::Color::NONE, Style::Color background=Style::Color::NONE);
   StyleGuard(std::ostream& out, StyleGuard&&);
@@ -73,6 +81,8 @@ private:
   Style style;
   mutable std::ostream* out;
   friend std::ostream& operator<<(std::ostream& out, const StyleGuard& guard);
+  friend void set_cout_style_mode(ConsoleMode mode);
+  friend void set_cerr_style_mode(ConsoleMode mode);
 };
 
 inline namespace styles{
