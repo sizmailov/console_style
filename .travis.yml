@@ -1,0 +1,15 @@
+language: cpp
+compiler:
+  - gcc
+  - clang
+script: 
+  - mkdir build
+  - cd build
+  - cmake .. && make all
+  - ./console_style_example
+notifications:
+  email:
+    recipients:
+      - sergei.a.izmailov@gmail.com
+    on_success: change
+    on_failure: always
